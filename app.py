@@ -69,7 +69,7 @@ def gemini_proxy():
             "details": str(e)
         }), 502
 
-
 if __name__ == "__main__":
-    # LOCAL dev server (do NOT use in production)
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
